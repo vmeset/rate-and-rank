@@ -1,0 +1,19 @@
+.typography {
+    margin: 0;
+}
+
+.small {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0em;
+}
+.medium {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0em;
+}
+.large {
+    font-size: 18px;
+    line-height: 29px;
+    letter-spacing: 0em;
+}
