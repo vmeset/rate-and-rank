@@ -1,0 +1,4 @@
+.foot {
+    display: grid;
+    background: var(--primary);
+}

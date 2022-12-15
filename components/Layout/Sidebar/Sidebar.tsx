@@ -1,8 +1,8 @@
 import { SidebarProps } from './Sidebar.props';
 
-export const Sidebar = ({children} : SidebarProps): JSX.Element => {
+export const Sidebar = ({children, ...props} : SidebarProps): JSX.Element => {
     return (
-        <div>
+        <div {...props}>
             {children}
         </div>
     );

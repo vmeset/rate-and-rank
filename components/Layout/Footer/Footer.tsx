@@ -1,10 +1,11 @@
 import { FooterProps } from './Footer.props';
+import styles from './Footer.module.css'
 
-export const Footer = ({children} : FooterProps): JSX.Element => {
+export const Footer = ({children, ...props} : FooterProps): JSX.Element => {
     return (
-        <div>
+        <div className={styles.foot} {...props}>
             {children}
-            foot
+            footer 
         </div>
     );
 };

@@ -1,9 +1,10 @@
 import { HeaderProps } from './Header.props';
 
-export const Header = ({children} : HeaderProps): JSX.Element => {
+export const Header = ({children, ...props} : HeaderProps): JSX.Element => {
     return (
-        <div>
+        <div  {...props}>
             {children}
+            head
         </div>
     );
 };
