@@ -4,6 +4,7 @@ export const Sidebar = ({children, ...props} : SidebarProps): JSX.Element => {
     return (
         <div {...props}>
             {children}
+            sidEr
         </div>
     );
 };
