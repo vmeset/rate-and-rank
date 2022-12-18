@@ -8,7 +8,7 @@ export interface IAppContext {
 	setMenu?: (newMenu: IMenuItem[]) => void
 }
 
-const AppContext = createContext<IAppContext>({ menu: [], firstCategory: TopLevelCategory.Courses })
+export const AppContext = createContext<IAppContext>({ menu: [], firstCategory: TopLevelCategory.Courses })
 
 export const AppContextProvider = ({ menu, firstCategory, children }: PropsWithChildren<IAppContext>) => {
 	
