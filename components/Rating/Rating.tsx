@@ -15,7 +15,7 @@ export const Rating: FC<RatingProps> = ({rating, setRating, isEditable = false, 
     const constructRating = (currentRating: number) => {
         const updatedArray = ratingArray.map((rate: JSX.Element, i: number) => {
             return (
-                <span className={cn(styles.star, {
+                <span key={i} className={cn(styles.star, {
                     [styles.filled]: i < currentRating,
                     [styles.editable]: !!isEditable
                     })}

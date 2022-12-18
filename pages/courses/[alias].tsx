@@ -11,7 +11,7 @@ const firstCategory = 0
 const Course = ({menu, page, products}: CourseProps): JSX.Element => {
     return (
         <>
-            {menu.flatMap(m => m.pages.map(p => <p>{'/courses/' + p.alias}</p>))}
+            {/* {menu.flatMap(m => m.pages.map((p, index) => <p key={index}>{'/courses/' + p.alias}</p>))} */}
         </>
     );
 };
