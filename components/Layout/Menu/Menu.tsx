@@ -9,6 +9,7 @@ import BlockIcon from './icons/block.svg'
 
 import cn from 'classnames'
 import styles from './Menu.module.css'
+import Link from 'next/link'
 
 const firstLevelMenu: IFirstLevelMenu[] = [
     {route: 'courses', name: 'Курсы', icon: <CourseIcon />, id: ETopLevelCategory.Courses},
@@ -26,14 +27,14 @@ export const Menu = (): JSX.Element => {
             <>
                 {firstLevelMenu.map(m => 
                     <div key={m.route}>
-                        <a href={`/${m.route}`}>
-                            <div className={cn(styles.firstLvl, {
-                                [styles.firstLvlActive]: m.id == firstCategory
-                            })}>
-                                {m.icon}
-                                <span>{m.name}</span>
-                            </div>
-                        </a>
+                        <Link href={`/${m.route}`}>
+                                <div className={cn(styles.firstLvl, {
+                                    [styles.firstLvlActive]: m.id == firstCategory
+                                })}>
+                                    {m.icon}
+                                    <span>{m.name}</span>
+                                </div>
+                        </Link>
                         {m.id == firstCategory && buildSecondLvl(m.route)}
                     </div>
                 )}
@@ -59,14 +60,14 @@ export const Menu = (): JSX.Element => {
     const buildThirdLvl = (pages: Page[], route: string) => {
         return (
             pages.map(p => (
-                <a href={`/${route}/${p.alias}`}
-                    key={p.alias}
-                    className={cn(styles.thirdLvl, {
-                        [styles.thirdLvlActive]: false
-                    })}
-                >
-                    {p.category}
-                </a>
+                <Link href={`/${route}/${p.alias}`} key={p.alias}>
+                    <p className={cn(styles.thirdLvl, {
+                            [styles.thirdLvlActive]: false
+                        })}
+                    >
+                        {p.category}
+                    </p>
+                </Link>
             ))
         )
     }
