@@ -1,16 +1,16 @@
 import { createContext, PropsWithChildren, useState } from 'react'
 import { IMenuItem } from '../models/IMenu'
-import { TopLevelCategory } from '../models/IPage'
+import { ETopLevelCategory } from '../models/IPage'
 
 export interface IAppContext {
 	menu: IMenuItem[]
-	firstCategory: TopLevelCategory
+	firstCategory: ETopLevelCategory
 	setMenu?: (newMenu: IMenuItem[]) => void
 }
 
-export const AppContext = createContext<IAppContext>({ menu: [], firstCategory: TopLevelCategory.Courses })
+export const AppContext = createContext<IAppContext>({ menu: [], firstCategory: ETopLevelCategory.Courses })
 
-export const AppContextProvider = ({ menu, firstCategory, children }: PropsWithChildren<IAppContext>) => {
+export const AppContextProvider = ({ menu, firstCategory, children }: PropsWithChildren<IAppContext>): JSX.Element => {
 	
     const [menuState, setMenuState] = useState<IMenuItem[]>(menu)
 	const setMenu = (newMenu: IMenuItem[]) => {
