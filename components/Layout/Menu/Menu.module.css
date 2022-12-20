@@ -35,8 +35,14 @@
     cursor: pointer;
     text-transform: uppercase;
 }
+.secondLvlSubMenu {
+    display: none;
+}
+.secondLvlActive{
+    display: block;
+}
 .secondLvlActive:last-child{
-    margin-bottom: 220px;
+    margin-bottom: 20px;
 }
 
 .thirdLvl {
