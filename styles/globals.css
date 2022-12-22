@@ -18,15 +18,15 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
-    /* color: white;
-    background: black; */
+    color: white;
+    background: black;
   }
-}
+} */
 
 :root {
 	--black: #3B434E;

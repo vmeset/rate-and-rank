@@ -6,20 +6,9 @@ import cn from 'classnames'
 import styles from './Menu.module.css'
 
 import { AppContext } from '../../../context/app.context'
-import { IFirstLevelMenu, Page } from '../../../models/IMenu'
-import { ETopLevelCategory } from '../../../models/IPage'
+import { Page } from '../../../models/IMenu'
 
-import CourseIcon from './icons/hat.svg'
-import CloudIcon from './icons/cloud.svg'
-import BookIcon from './icons/book.svg'
-import BlockIcon from './icons/block.svg'
-
-const firstLevelMenu: IFirstLevelMenu[] = [
-    {route: 'courses', name: 'Курсы', icon: <CourseIcon />, id: ETopLevelCategory.Courses},
-    {route: 'services', name: 'Сервисы', icon: <CloudIcon />, id: ETopLevelCategory.Services},
-    {route: 'books', name: 'Книги', icon: <BookIcon />, id: ETopLevelCategory.Books},
-    {route: 'products', name: 'Товары', icon: <BlockIcon />, id: ETopLevelCategory.Products}
-]
+import { firstLevelMenu } from '../../../helpers/helpers'
 
 export const Menu = (): JSX.Element => {
 
