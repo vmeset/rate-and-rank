@@ -1,0 +1,14 @@
+.sidebar {
+    display: grid;
+    gap: 20px;
+}
+
+.logo {
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+}
