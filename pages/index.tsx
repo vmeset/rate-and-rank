@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Htag, Rating, Tag, Typography, withLayout } from '../components'
+import { Button, Htag, Rating, Tag, Card, withLayout } from '../components'
 import axios from 'axios'
 import { IMenuItem } from '../models/IMenu'
 import { GetStaticProps } from 'next'
@@ -17,9 +17,9 @@ function Home({menu, firstCategory}: HomeProps): JSX.Element {
       <Button apearance='primary' arrow='down'>puCh</Button>
       <Button apearance='ghost' arrow='right'>puCh</Button>
 
-      <Typography sizer='l'>
+      <Card sizer='l'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab libero molestias aliquid ipsum laborum et dolore tempore hic? Fugiat recusandae nulla similique officia eveniet animi at. Praesentium laudantium iure alias!
-      </Typography>
+      </Card>
 
       <Tag>tagTeam</Tag>
       <Tag href='ya.ru'>tagTeam</Tag>

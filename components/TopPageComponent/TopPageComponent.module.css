@@ -9,3 +9,11 @@
     justify-items: left;
     gap: 10px;
 }
+
+.hhTitle {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-items: left;
+    align-items: baseline;
+    gap: 10px;
+}
