@@ -5,7 +5,7 @@ import { withLayout } from "../../components"
 import { firstLevelMenu } from "../../helpers/helpers"
 import { IMenuItem } from "../../models/IMenu"
 
-const Courses = ({firstCategory}: CategoryProps): JSX.Element => {
+const Category = ({firstCategory}: CategoryProps): JSX.Element => {
     return (
         <div>
             cat:=:{firstCategory}
@@ -13,7 +13,7 @@ const Courses = ({firstCategory}: CategoryProps): JSX.Element => {
     )
 }
 
-export default withLayout(Courses)
+export default withLayout(Category)
 
 export const getStaticPaths: GetStaticPaths = async () => {
     return {

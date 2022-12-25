@@ -7,9 +7,9 @@ import { ParsedUrlQuery } from "querystring";
 import { IProduct } from "../../models/IProduct";
 import { firstLevelMenu } from "../../helpers/helpers";
 
-const Alias = ({menu, page, products, firstCategory}: AliasProps): JSX.Element => {
+const Alias = ({page, products, firstCategory}: AliasProps): JSX.Element => {
     return (
-        <TopPageComponent menu={menu} firstCategory={firstCategory} page={page} products={products} />
+        <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
     );
 };
 
