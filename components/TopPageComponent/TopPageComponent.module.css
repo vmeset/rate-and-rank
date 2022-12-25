@@ -1,0 +1,11 @@
+.wrapper {
+    margin-top: 20px;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-items: left;
+    gap: 10px;
+}
