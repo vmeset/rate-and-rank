@@ -20,6 +20,7 @@
     grid-template-columns: repeat(3, 1fr);
     padding: 20px;
     text-align: center;
+    gap: 20px 0;
 }
 
 .salaryValue{
@@ -52,4 +53,26 @@
 
 .filled circle {
     fill: var(--red);
+}
+
+@media screen and (max-width: 1200px) {
+    .hh {
+        grid-template-columns: 1fr;
+    }    
+}
+
+@media screen and (max-width: 640px) {
+    .salary {
+        grid-template-columns: 1fr;
+    }
+
+    .salary > div {
+        border-right: none;
+        border-bottom: 1px solid var(--gray-light);
+        padding-bottom: 20px;
+    }
+    .salary > div:last-child {
+        border-bottom: none;
+        padding-bottom: none;
+    }
 }

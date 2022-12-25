@@ -3,6 +3,7 @@ import styles from './TopPageComponent.module.css'
 import { Tag } from "../Tag/Tag";
 import { Htag } from "../Htag/Htag";
 import { HH } from "../HH/HH";
+import { ETopLevelCategory } from "../../models/IPage";
 
 export const TopPageComponent = ({firstCategory, products, page}: TopPageComponentProps): JSX.Element => {
     return (
@@ -21,7 +22,7 @@ export const TopPageComponent = ({firstCategory, products, page}: TopPageCompone
                 </Htag>
                 <Tag sizer="m" color="red">hh.ru</Tag>
             </div>
-            {page.hh && <HH {...page.hh} />}
+            {firstCategory == ETopLevelCategory.Courses && page.hh && <HH {...page.hh} />}
         </div>
     )
 }
