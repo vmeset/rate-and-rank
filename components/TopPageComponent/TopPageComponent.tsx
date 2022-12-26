@@ -5,10 +5,11 @@ import { Htag } from "../Htag/Htag";
 import { HH } from "../HH/HH";
 import { ETopLevelCategory } from "../../models/IPage";
 import { Advantage } from "../Advantage/Advantage";
+import { Typography } from "../Typography/Typography";
 
 export const TopPageComponent = ({firstCategory, products, page}: TopPageComponentProps): JSX.Element => {
     return (
-        <div className={styles.wrapper}>
+        <>
             <div className={styles.title}>
                 <Htag tag="h1">{page.title}</Htag>
                 {products && <Tag color="grey" sizer="m">{products.length}</Tag>}
@@ -22,8 +23,17 @@ export const TopPageComponent = ({firstCategory, products, page}: TopPageCompone
                 <Tag sizer="m" color="red">hh.ru</Tag>
             </div>
             {firstCategory == ETopLevelCategory.Courses && page.hh && <HH {...page.hh} />}
-            <Htag tag="h2">Преимущества</Htag>
-            <Advantage advantages={page.advantages} />
-        </div>
+            {page.advantages && page.advantages.length && 
+                <>
+                    <Htag tag="h2">Преимущества</Htag>
+                    <Advantage advantages={page.advantages} />
+                </>
+            }
+            {page.seoText && <Typography>{page.seoText}</Typography>}
+            <Htag tag="h2">Получаемые навыки</Htag>
+            {page.tags && page.tags.map(t => (
+                <Tag key={t} color='primary'>{t}</Tag>
+            ))}
+        </>
     )
 }

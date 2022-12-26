@@ -1,9 +1,10 @@
 .sidebar {
     display: grid;
+    grid-template-rows: auto auto 1fr;
 }
 
 .logo {
-    margin: 15px 0;
+    margin-bottom: 15px;
     display: grid;
     grid-template-columns: 48px 1fr;
     align-items: center;

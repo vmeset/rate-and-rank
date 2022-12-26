@@ -8,7 +8,7 @@ import { Typography } from "../Typography/Typography";
 export const Advantage = ({advantages}: AdvantageProps): JSX.Element => {
     return (
         <div className={styles.advantageBlock}>
-            {advantages && advantages?.map(adv => (
+            {advantages?.map(adv => (
                 <div key={adv._id}>
                     <div className={styles.advantageItem}>
                         <Done />
