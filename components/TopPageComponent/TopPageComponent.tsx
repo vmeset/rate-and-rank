@@ -6,6 +6,8 @@ import { HH } from "../HH/HH";
 import { ETopLevelCategory } from "../../models/IPage";
 import { Advantage } from "../Advantage/Advantage";
 import { Typography } from "../Typography/Typography";
+import { Sort } from "../Sort/Sort";
+import { ESort } from "../Sort/Sort.props";
 
 export const TopPageComponent = ({firstCategory, products, page}: TopPageComponentProps): JSX.Element => {
     return (
@@ -13,7 +15,7 @@ export const TopPageComponent = ({firstCategory, products, page}: TopPageCompone
             <div className={styles.title}>
                 <Htag tag="h1">{page.title}</Htag>
                 {products && <Tag color="grey" sizer="m">{products.length}</Tag>}
-                <span>Сортировка</span>
+                <Sort sort={ESort.Rating} setSort={() => alert('sort')} />
             </div>
             <div className={styles.text}>
                 {products && products.map(p => <div key={p._id}>{p.title}</div>)}
