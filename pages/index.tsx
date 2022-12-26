@@ -17,7 +17,7 @@ function Home({menu, firstCategory}: HomeProps): JSX.Element {
       <Button apearance='primary' arrow='down'>puCh</Button>
       <Button apearance='ghost' arrow='right'>puCh</Button>
 
-      <Card sizer='l'>
+      <Card color='white'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab libero molestias aliquid ipsum laborum et dolore tempore hic? Fugiat recusandae nulla similique officia eveniet animi at. Praesentium laudantium iure alias!
       </Card>
 
