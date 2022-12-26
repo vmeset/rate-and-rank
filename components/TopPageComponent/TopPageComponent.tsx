@@ -8,17 +8,26 @@ import { Advantage } from "../Advantage/Advantage";
 import { Typography } from "../Typography/Typography";
 import { Sort } from "../Sort/Sort";
 import { ESort } from "../Sort/Sort.props";
+import { sortReducer } from "../../reducers/sort.reducer";
+import { useReducer } from "react";
 
 export const TopPageComponent = ({firstCategory, products, page}: TopPageComponentProps): JSX.Element => {
+
+    const [{products: sortedProducts, sort}, dispatchSort] = useReducer(sortReducer, {products, sort: ESort.Rating})
+
+    const setSort = (sort: ESort) => {
+        dispatchSort({type: sort})
+    }
+
     return (
         <>
             <div className={styles.title}>
                 <Htag tag="h1">{page.title}</Htag>
                 {products && <Tag color="grey" sizer="m">{products.length}</Tag>}
-                <Sort sort={ESort.Rating} setSort={() => alert('sort')} />
+                <Sort sort={sort} setSort={setSort} />
             </div>
             <div className={styles.text}>
-                {products && products.map(p => <div key={p._id}>{p.title}</div>)}
+                {sortedProducts && sortedProducts.map(p => <div key={p._id}>{p.title}</div>)}
             </div>
             <div className={styles.hhTitle}>
                 <Htag tag="h2">Вакансии - {page.category}</Htag>
