@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Htag, Rating, Tag, Card, withLayout, Input } from '../components'
+import { Button, Htag, Rating, Tag, Card, withLayout, Input, Textarea } from '../components'
 import axios from 'axios'
 import { IMenuItem } from '../models/IMenu'
 import { GetStaticProps } from 'next'
@@ -12,6 +12,8 @@ function Home({menu, firstCategory}: HomeProps): JSX.Element {
     <>
 
       <Input placeholder='Имя' />
+
+      <Textarea />
       <Htag tag={'h1'}>text</Htag>
       <Htag tag={'h2'}>text</Htag>
       <Htag tag={'h3'}>text</Htag>
