@@ -1,4 +1,4 @@
-import { SearchComponent } from '../../Search/SearchComponent';
+import { Search } from '../../Search/Search';
 import { Menu } from '../Menu/Menu';
 import { SidebarProps } from './Sidebar.props';
 import Logo from '../logo2.svg'
@@ -12,7 +12,7 @@ export const Sidebar = ({className, ...props} : SidebarProps): JSX.Element => {
                 <Logo />
                 <span>VMESET</span>
             </div>
-            <SearchComponent />
+            <Search />
             <Menu />
         </div>
     );
