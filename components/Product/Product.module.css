@@ -29,6 +29,7 @@
 }
 .feature {
     grid-column: start / middle;
+    padding-right: 60px;
 }
 .advBlock {
     grid-column: middle / end;
@@ -94,4 +95,21 @@
 .disadvantages {
     border-left: 2px solid var(--red);
     padding-left: 15px;
+}
+.characteristics {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    font-size: 16px;
+    line-height: 32px;
+    align-items: baseline;
+    font-weight: 700;
+}
+.characteristicsVal {
+    font-weight: 500;
+    line-height: 22px;
+}
+.characteristicsDots {
+    border-bottom: 1px dashed var(--gray-light);
+    margin-bottom: 10px;
 }
