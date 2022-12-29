@@ -66,3 +66,32 @@
     font-size: 14px;
     line-height: 19px;
 }
+.category {
+    margin-top: 5px;
+}
+.description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+.reviewBtn{
+    margin-left: 20px;
+}
+.advBlock {
+    font-size: 16px;
+    line-height: 22px;
+}
+.advTitle {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.advantages {
+    border-left: 2px solid var(--green);
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+.disadvantages {
+    border-left: 2px solid var(--red);
+    padding-left: 15px;
+}

@@ -29,7 +29,7 @@ export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.E
                 <Rating rating={product.reviewAvg ?? product.initialRating} />
             </div>
             <div className={styles.tags}>
-                {product.categories.map(cat => <Tag key={cat}>{cat}</Tag>)}
+                {product.categories.map(cat => <Tag className={styles.category} key={cat}>{cat}</Tag>)}
             </div>
             <div className={styles.priceTitle}>цена</div>
             <div className={styles.creditTitle}>кредит</div>
@@ -38,19 +38,23 @@ export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.E
             <div className={styles.description}>{product.description}</div>
             <div className={styles.feature}>fi4i</div>
             <div className={styles.advBlock}>
-                <div className={styles.advantages}>
-                    <div>Преимущества</div>
+                {product.advantages && <div className={styles.advantages}>
+                    <div className={styles.advTitle}>Преимущества</div>
                     <div>{product.advantages}</div>
-                </div>
-                <div className={styles.disadvantages}>
-                    <div>Недостатки</div>
+                </div>}
+                {product.disadvantages && <div className={styles.disadvantages}>
+                    <div className={styles.advTitle}>Недостатки</div>
                     <div>{product.disadvantages}</div>
-                </div>
+                </div>}
             </div>
             <Divider className={styles.hr} />
             <div className={styles.actions}>
                 <Button apearance="primary">Узнать подробнее</Button>
-                <Button apearance="ghost" arrow="right">Читать отзывы</Button>
+                <Button apearance="ghost" arrow="right"
+                    className={styles.reviewBtn}
+                >
+                    Читать отзывы
+                </Button>
             </div>
         </Card>
     )
