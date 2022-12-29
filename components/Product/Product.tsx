@@ -6,14 +6,24 @@ import { Card } from "../Card/Card"
 import { Rating } from "../Rating/Rating"
 import { Tag } from "../Tag/Tag"
 import { Button } from "../Button/Button"
+import { priceRu } from "../../helpers/helpers"
 
 export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.Element => {
     return (
         <Card className={styles.product}>
             <div className={styles.logo}><img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} /></div>
             <div className={styles.title}>{product.title}</div>
-            <div className={styles.price}>{product.price}</div>
-            <div className={styles.credit}>{product.credit}</div>
+            <div className={styles.price}>
+                {priceRu(product.price)}
+                {product.oldPrice &&
+                    <Tag color='green' sizer="s" className={styles.oldPrice}>
+                        {priceRu(product.price - product.oldPrice)}
+                    </Tag>
+                }
+            </div>
+            <div className={styles.credit}>
+                {priceRu(product.credit)}/<span className={styles.month}>мес</span>
+            </div>
             <div className={styles.rating}>
                 <Rating rating={product.reviewAvg ?? product.initialRating} />
             </div>

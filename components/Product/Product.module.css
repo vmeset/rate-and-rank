@@ -36,3 +36,33 @@
 .actions {
     grid-column: start / end;
 }
+
+.logo img {
+    border-radius: 5px;
+}
+.title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    align-self: flex-end;
+}
+.price, .credit {
+    font-size: 20px;
+    line-height: 27px;
+    align-self: flex-end;
+}
+.oldPrice {
+    margin-left: 5px;
+}
+.month {
+    font-size: 14px;
+    line-height: 19px;
+}
+.rating {
+    align-self: flex-end;
+}
+.priceTitle, .creditTitle, .rateTitle {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+}
