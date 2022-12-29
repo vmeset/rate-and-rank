@@ -64,7 +64,7 @@ export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.E
                     <div>{product.disadvantages}</div>
                 </div>}
             </div>
-            <Divider className={styles.hr} />
+            <Divider className={cn(styles.hr, styles.hr2)} />
             <div className={styles.actions}>
                 <Button apearance="primary">Узнать подробнее</Button>
                 <Button apearance="ghost" arrow="right"
