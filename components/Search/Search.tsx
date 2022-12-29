@@ -22,8 +22,8 @@ export const Search: FC<SearchProps> = ({className, ...props}):JSX.Element => {
         setQuery('')
     }
 
-    const handleKeydown = (e: KeyboardEvent) => {
-        if(e.key == 'Enter') {
+    const handleKeydown = (event: KeyboardEvent) => {
+        if(event.key == 'Enter') {
             goToSearch()
         }
     }
