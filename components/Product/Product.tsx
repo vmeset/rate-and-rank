@@ -7,6 +7,7 @@ import { Rating } from "../Rating/Rating"
 import { Tag } from "../Tag/Tag"
 import { Button } from "../Button/Button"
 import { priceRu } from "../../helpers/helpers"
+import { Divider } from "../Divider/Divider"
 
 export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.Element => {
     return (
@@ -33,7 +34,7 @@ export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.E
             <div className={styles.priceTitle}>цена</div>
             <div className={styles.creditTitle}>кредит</div>
             <div className={styles.rateTitle}>{product.reviewCount} отзывов</div>
-            <div className={styles.hr}><hr /></div>
+            <Divider className={styles.hr} />
             <div className={styles.description}>{product.description}</div>
             <div className={styles.feature}>fi4i</div>
             <div className={styles.advBlock}>
@@ -46,7 +47,7 @@ export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.E
                     <div>{product.disadvantages}</div>
                 </div>
             </div>
-            <div className={styles.hr}><hr /></div>
+            <Divider className={styles.hr} />
             <div className={styles.actions}>
                 <Button apearance="primary">Узнать подробнее</Button>
                 <Button apearance="ghost" arrow="right">Читать отзывы</Button>
