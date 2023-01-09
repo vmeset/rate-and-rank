@@ -9,6 +9,7 @@ import { Button } from "../Button/Button"
 import { declOfNum, priceRu } from "../../helpers/helpers"
 import { Divider } from "../Divider/Divider"
 import Image from "next/image"
+import { Review } from "../Review/Review"
 
 export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.Element => {
 
@@ -84,7 +85,9 @@ export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.E
                 [styles.opened]: isRevOpen,
                 [styles.closed]: !isRevOpen,
             })}>
-                rew
+                {product.reviews.map(rev => 
+                    <Review key={rev._id} review={rev} />    
+                )}
             </Card>     
         </>
     )
