@@ -10,6 +10,7 @@ import { declOfNum, priceRu } from "../../helpers/helpers"
 import { Divider } from "../Divider/Divider"
 import Image from "next/image"
 import { Review } from "../Review/Review"
+import { ReviewForm } from "../ReviewForm/ReviewForm"
 
 export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.Element => {
 
@@ -86,8 +87,9 @@ export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.E
                 [styles.closed]: !isRevOpen,
             })}>
                 {product.reviews.map(rev => 
-                    <Review key={rev._id} review={rev} />    
+                    <Review key={rev._id} review={rev} />
                 )}
+                <ReviewForm productId={product._id} />
             </Card>     
         </>
     )
