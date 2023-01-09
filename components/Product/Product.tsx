@@ -87,7 +87,10 @@ export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.E
                 [styles.closed]: !isRevOpen,
             })}>
                 {product.reviews.map(rev => 
-                    <Review key={rev._id} review={rev} />
+                    <div key={rev._id}>
+                        <Review review={rev} />
+                        <Divider />
+                    </div>
                 )}
                 <ReviewForm productId={product._id} />
             </Card>     
