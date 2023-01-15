@@ -15,7 +15,7 @@ export const ReviewForm: FC<ReviewFormProps> = ({productId, className, ...props}
     const [isSuccess, setIsSuccess] = useState<boolean>(false)
     const [error, setError] = useState<string>()
 
-    const {control, register, handleSubmit} = useForm<IReviewForm>()
+    const {control, register, handleSubmit, formState: {errors}} = useForm<IReviewForm>()
 
     const onSubmit = (data: IReviewForm) => {
         console.log(data)
@@ -24,8 +24,14 @@ export const ReviewForm: FC<ReviewFormProps> = ({productId, className, ...props}
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div {...props} className={cn(styles.reviewForm, className)}>
-                <Input {...register("name")} />
-                <Input {...register("title")} />
+                <Input {...register("name", {required: {value: true, message: 'Имя обязательно'}})} 
+                    placeholder='Имя'
+                    error={errors.name}
+                />
+                <Input {...register("title", {required: {value: true, message: 'Заголовок обязательно'}})} 
+                    placeholder='Заголовок отзыва'
+                    error={errors.title}
+                />
                 <div className={styles.rating}>
                     <span>Оценка:</span>
                     <Controller
@@ -35,7 +41,10 @@ export const ReviewForm: FC<ReviewFormProps> = ({productId, className, ...props}
                             rating={field.value} setRating={field.onChange} />}
                     />
                 </div>
-                <Textarea {...register("description")} />
+                <Textarea placeholder='Текст отзыва'
+                    error={errors.description}
+                    {...register("description", {required: {value: true, message: 'Заголовок обязательно'}})} 
+                />
                 <div className={styles.submit}>
                     <Button apearance="primary">
                         Отправить
