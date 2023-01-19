@@ -4,7 +4,7 @@ import StarIcon from './star.svg'
 import cn from 'classnames'
 import styles from './Rating.module.css'
 
-export const Rating: FC<RatingProps> = ({rating, setRating, isEditable = false, ...props}): JSX.Element => {
+export const Rating = ({rating, error, setRating, isEditable = false, ...props}: RatingProps): JSX.Element => {
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>))
 
     useEffect(() => {
@@ -23,9 +23,7 @@ export const Rating: FC<RatingProps> = ({rating, setRating, isEditable = false, 
                     onMouseLeave={() => changeDisplay(rating)}
                     onClick={() => clickHandler(i+1)}
                 >
-                    <StarIcon
-                        
-                    />
+                    <StarIcon />
                 </span>
             )
         })
@@ -47,8 +45,11 @@ export const Rating: FC<RatingProps> = ({rating, setRating, isEditable = false, 
     }
 
     return (
-        <div {...props}>
+        <div {...props} className={cn(styles.ratingWrapper, {
+            [styles.error]: error
+        })}>
             {ratingArray.map((rate, i) => (<span key={i}>{rate}</span>))}
+            {error && <span role="alert" className={styles.errorMessage}>{error.message}</span>}
         </div>
     );
 };

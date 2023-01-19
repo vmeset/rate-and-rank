@@ -8,27 +8,39 @@ import { Textarea } from "../Textarea/Textarea";
 import { Button } from "../Button/Button";
 import CloseIcon from './close.svg'
 import { useForm, Controller } from "react-hook-form";
-import { IReviewForm } from "./IReviewForm";
+import { IReviewForm, IReviewFormResponse } from "./IReviewForm";
+import axios from "axios";
+import { API } from "../../helpers/api";
 
 export const ReviewForm: FC<ReviewFormProps> = ({productId, className, ...props}): JSX.Element => {
 
     const [isSuccess, setIsSuccess] = useState<boolean>(false)
     const [error, setError] = useState<string>()
 
-    const {control, register, handleSubmit, formState: {errors}} = useForm<IReviewForm>()
+    const {control, register, handleSubmit, formState: {errors}, reset} = useForm<IReviewForm>()
 
-    const onSubmit = (data: IReviewForm) => {
-        console.log(data)
+    const onSubmit = async (formData: IReviewForm) => {
+        try {
+            const {data} = await axios.post<IReviewFormResponse>(API.review.createDemo, {...formData, productId})
+            if(data.message) {
+                setIsSuccess(true)
+                reset()
+            } else {
+                setError('errorka!')
+            }
+        } catch (e: any) {
+            setError(e.message)
+        }
     }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div {...props} className={cn(styles.reviewForm, className)}>
-                <Input {...register("name", {required: {value: true, message: 'Имя обязательно'}})} 
+                <Input {...register("name", {required: {value: true, message: 'Имя обязательно'}})}
                     placeholder='Имя'
                     error={errors.name}
                 />
-                <Input {...register("title", {required: {value: true, message: 'Заголовок обязательно'}})} 
+                <Input {...register("title", {required: {value: true, message: 'Заголовок обязательно'}})}
                     placeholder='Заголовок отзыва'
                     error={errors.title}
                 />
@@ -37,18 +49,18 @@ export const ReviewForm: FC<ReviewFormProps> = ({productId, className, ...props}
                     <Controller
                         name="rating"
                         control={control}
-                        render={({ field }) => <Rating isEditable 
+                        rules={{ required: {value: true, message: 'Укажите рейтинг'} }}
+                        render={({ field }) => <Rating isEditable error={errors.rating}
                             rating={field.value} setRating={field.onChange} />}
                     />
                 </div>
                 <Textarea placeholder='Текст отзыва'
                     error={errors.description}
-                    {...register("description", {required: {value: true, message: 'Заголовок обязательно'}})} 
+                    className={styles.description}
+                    {...register("description", {required: {value: true, message: 'Заголовок обязательно'}})}
                 />
                 <div className={styles.submit}>
-                    <Button apearance="primary">
-                        Отправить
-                    </Button>
+                    <Button apearance="primary">Отправить</Button>
                     <span>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
                 </div>
             </div>
@@ -62,7 +74,7 @@ export const ReviewForm: FC<ReviewFormProps> = ({productId, className, ...props}
                     className={styles.close}
                     aria-label="Закрыть оповещение"
                 >
-                    <CloseIcon />
+                    <CloseIcon className={styles.close} onClick={() => setIsSuccess(false)} />
                 </button>
             </div>}
             {error && <div className={cn(styles.error, styles.panel)} role="alert">
@@ -72,9 +84,9 @@ export const ReviewForm: FC<ReviewFormProps> = ({productId, className, ...props}
                     className={styles.close}
                     aria-label="Закрыть оповещение"
                 >
-                    <CloseIcon />
+                    <CloseIcon className={styles.error} onClick={() => setError(undefined)} />
                 </button>
             </div>}
         </form>
-    );
-};
+    )
+}

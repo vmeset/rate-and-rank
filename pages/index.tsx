@@ -3,6 +3,7 @@ import { Button, Htag, Rating, Tag, Card, withLayout, Input, Textarea } from '..
 import axios from 'axios'
 import { IMenuItem } from '../models/IMenu'
 import { GetStaticProps } from 'next'
+import { API } from '../helpers/api'
 
 function Home({menu, firstCategory}: HomeProps): JSX.Element {
 
@@ -41,7 +42,7 @@ export default withLayout(Home)
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const firstCategory = 0
-  const {data: menu} = await axios.post<IMenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {firstCategory})
+  const {data: menu} = await axios.post<IMenuItem[]>(API.topPage.find, {firstCategory})
   return {
     props: {
       menu,
