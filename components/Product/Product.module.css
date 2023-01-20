@@ -122,8 +122,8 @@
 	max-height: auto;
 	padding: 30px;
 }
-.reviews {
-
+.rateTitle a {
+	color: var(--primary);
 }
 
 @media screen and (max-width: 1320px) {

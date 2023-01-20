@@ -69,11 +69,12 @@ export const Menu = (): JSX.Element => {
     }
     const buildThirdLvl = (pages: Page[], route: string) => {
         return (
+            
             pages.map(p => {
                 return (
                     <Link href={`/${route}/${p.alias}`} key={p.alias}>
                         <p className={cn(styles.thirdLvl, {
-                                [styles.thirdLvlActive]: router.asPath.split('/')[2] == p.alias
+                                [styles.thirdLvlActive]: router.asPath.split('/')[2].split('#')[0] == p.alias
                             })}
                         >
                             - {p.category}
