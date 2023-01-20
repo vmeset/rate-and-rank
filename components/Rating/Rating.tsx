@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { RatingProps } from "./Rating.props";
 import StarIcon from './star.svg'
 import cn from 'classnames'

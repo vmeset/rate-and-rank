@@ -1,7 +1,7 @@
 import { IProduct } from '../models/IProduct';
 import { ESort } from './../components/Sort/Sort.props';
 
-export type SortActions = {type: ESort}
+export type SortActions = {type: ESort} | {type: 'reset', initialState: IProduct[]}
 
 export interface SortReducerState {
     products: IProduct[],
@@ -19,6 +19,11 @@ export const sortReducer = (state: SortReducerState, action: SortActions) => {
             return {
                 sort: ESort.Price,
                 products: state.products.sort((a,b) => a.price > b.price ? 1 : -1)
+            }
+        case 'reset':
+            return {
+                sort: ESort.Rating,
+                products: action.initialState
             }
         default:
             throw new Error('Ошибка сортировки')

@@ -5,11 +5,10 @@ import { Htag } from "../Htag/Htag";
 import { HH } from "../HH/HH";
 import { ETopLevelCategory } from "../../models/IPage";
 import { Advantage } from "../Advantage/Advantage";
-import { Typography } from "../Typography/Typography";
 import { Sort } from "../Sort/Sort";
 import { ESort } from "../Sort/Sort.props";
 import { sortReducer } from "../../reducers/sort.reducer";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { Product } from "../Product/Product";
 
 export const TopPageComponent = ({firstCategory, products, page}: TopPageComponentProps): JSX.Element => {
@@ -20,6 +19,11 @@ export const TopPageComponent = ({firstCategory, products, page}: TopPageCompone
         dispatchSort({type: sort})
     }
 
+    useEffect(() => {
+        dispatchSort({type: 'reset', initialState: products})
+    }, [products])
+    
+    
     return (
         <>
             <div className={styles.title}>
