@@ -22,18 +22,18 @@ export const Search: FC<SearchProps> = ({className, ...props}):JSX.Element => {
         setQuery('')
     }
 
-    const handleKeydown = (event: KeyboardEvent) => {
-        if(event.key == 'Enter') {
-            goToSearch()
-        }
-    }
+    // const handleKeydown = (event: KeyboardEvent) => {
+    //     if(event.key == 'Enter') {
+    //         goToSearch()
+    //     }
+    // }
     
     return (
         <div className={cn(styles.search, className)} {...props}>
             <Input placeholder='Поиск...'
                 className={styles.input} 
                 value={query} onChange={e => setQuery(e.target.value)}
-                onKeyDown={handleKeydown}
+                // onKeyDown={handleKeydown}
             />
             <Button apearance='primary' className={styles.button}
                 onClick={goToSearch}

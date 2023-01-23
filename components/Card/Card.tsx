@@ -14,3 +14,4 @@ export const Card = forwardRef(({color = 'white', className, children, ...props}
         </div>
     )
 })
+Card.displayName = "Card"
