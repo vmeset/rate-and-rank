@@ -1,7 +1,7 @@
 import { AdvantageProps } from "./Advantage.props";
 import cn from 'classnames'
 import styles from './Advantage.module.css'
-import Done from './done.svg'
+import Done from './done2.svg'
 import { Htag } from "../Htag/Htag";
 import { Typography } from "../Typography/Typography";
 

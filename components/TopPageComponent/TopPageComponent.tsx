@@ -10,10 +10,13 @@ import { ESort } from "../Sort/Sort.props";
 import { sortReducer } from "../../reducers/sort.reducer";
 import { useEffect, useReducer } from "react";
 import { Product } from "../Product/Product";
+import { useScrollY } from "../../hooks/useScrollY";
 
 export const TopPageComponent = ({firstCategory, products, page}: TopPageComponentProps): JSX.Element => {
 
     const [{products: sortedProducts, sort}, dispatchSort] = useReducer(sortReducer, {products, sort: ESort.Rating})
+
+    const y = useScrollY()
 
     const setSort = (sort: ESort) => {
         dispatchSort({type: sort})
@@ -32,7 +35,7 @@ export const TopPageComponent = ({firstCategory, products, page}: TopPageCompone
                 <Sort sort={sort} setSort={setSort} />
             </div>
             <div className={styles.text}>
-                {sortedProducts && sortedProducts.map(p => <Product key={p._id} product={p} />)}
+                {sortedProducts && sortedProducts.map(p => <Product layout key={p._id} product={p} />)}
             </div>
             <div className={styles.hhTitle}>
                 <Htag tag="h2">Вакансии - {page.category}</Htag>

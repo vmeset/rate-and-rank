@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from "react"
+import { ForwardedRef, forwardRef, useRef, useState } from "react"
 import { ProductProps } from "./Product.props"
 import styles from './Product.module.css'
 import cn from 'classnames'
@@ -11,8 +11,9 @@ import { Divider } from "../Divider/Divider"
 import Image from "next/image"
 import { Review } from "../Review/Review"
 import { ReviewForm } from "../ReviewForm/ReviewForm"
+import {motion} from 'framer-motion'
 
-export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.Element => {
+export const Product = motion(forwardRef(({product, className, ...props}: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 
     const [isRevOpen, setIsRevOpen] = useState(false)
     const reviewRef = useRef<HTMLDivElement>(null)
@@ -26,7 +27,7 @@ export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.E
     }
 
     return (
-        <div className={className} {...props}>
+        <div className={className} {...props} ref={ref}>
             <Card className={styles.product}>
                 <div className={styles.logo}>
                     <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} 
@@ -107,4 +108,4 @@ export const Product: FC<ProductProps> = ({product, className, ...props}): JSX.E
             </Card>     
         </div>
     )
-}
+}))
