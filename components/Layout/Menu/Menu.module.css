@@ -41,13 +41,7 @@
     text-transform: uppercase;
 }
 .secondLvlSubMenu {
-    display: none;
-}
-.secondLvlActive{
-    display: block;
-}
-.secondLvlActive:last-child{
-    margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .thirdLvl {
