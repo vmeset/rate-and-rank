@@ -5,12 +5,14 @@ import { LayoutProps } from './Layout.props'
 import { Sidebar } from './Sidebar/Sidebar'
 import styles from './Layout.module.css'
 import { AppContextProvider, IAppContext } from '../../context/app.context'
+import { Up } from '../Up/Up'
 
 const Layout = ({children} : LayoutProps): JSX.Element => {
     return (
         <div className={styles.wrapper}>
             <Header className={styles.header} />
             <Sidebar className={styles.sidebar} />
+            <Up />
             <div className={styles.body}>
                 {children}
             </div>
