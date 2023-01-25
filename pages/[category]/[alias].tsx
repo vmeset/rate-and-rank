@@ -7,10 +7,21 @@ import { ParsedUrlQuery } from "querystring";
 import { IProduct } from "../../models/IProduct";
 import { firstLevelMenu } from "../../helpers/helpers";
 import { API } from "../../helpers/api";
+import Head from "next/head";
 
 const Alias = ({page, products, firstCategory}: AliasProps): JSX.Element => {
     return (
-        <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
+        <>
+            {page && products && 
+                <>
+                    <Head>
+                        <title>{page.metaTitle}</title>
+                        <meta name="description" content={page.metaDescription} />
+                    </Head>
+                    <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
+                </>
+            }
+        </>
     );
 };
 
