@@ -100,8 +100,12 @@ export const Menu = (): JSX.Element => {
                 return (
                     <motion.div key={p.alias} variants={variantsChildren}>
                         <Link href={`/${route}/${p.alias}`}>
-                            <span className={cn(styles.thirdLvl, {
+                            {/* <span className={cn(styles.thirdLvl, {
                                     [styles.thirdLvlActive]: router.asPath.split('/')[2].split('#')[0] == p.alias
+                                })}
+                            > */}
+                            <span className={cn(styles.thirdLvl, {
+                                    [styles.thirdLvlActive]: router.asPath.split('/')[2] == p.alias
                                 })}
                             >
                                 - {p.category}
