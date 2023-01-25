@@ -1,6 +1,6 @@
 import { Htag, withLayout } from "../components"
 
-function Error404(): JSX.Element {
+export function Error404(): JSX.Element {
   
     return (
       <>

@@ -15,5 +15,5 @@ export const Sidebar = ({className, ...props} : SidebarProps): JSX.Element => {
             <Search />
             <Menu />
         </div>
-    );
-};
+    )
+}

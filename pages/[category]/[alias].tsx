@@ -8,22 +8,24 @@ import { IProduct } from "../../models/IProduct";
 import { firstLevelMenu } from "../../helpers/helpers";
 import { API } from "../../helpers/api";
 import Head from "next/head";
+import { Error404 } from "../404";
 
 const Alias = ({page, products, firstCategory}: AliasProps): JSX.Element => {
+    
+    if(!products || !page) {
+        return <Error404 />
+    }
+
     return (
         <>
-            {page && products && 
-                <>
-                    <Head>
-                        <title>{page.metaTitle}</title>
-                        <meta name="description" content={page.metaDescription} />
-                    </Head>
-                    <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
-                </>
-            }
+            <Head>
+                <title>{page.metaTitle}</title>
+                <meta name="description" content={page.metaDescription} />
+            </Head>
+            <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
         </>
-    );
-};
+    )
+}
 
 export default withLayout(Alias)
 
