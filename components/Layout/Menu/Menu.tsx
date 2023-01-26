@@ -7,7 +7,7 @@ import cn from 'classnames'
 import styles from './Menu.module.css'
 
 import { AppContext } from '../../../context/app.context'
-import { Page } from '../../../models/IMenu'
+import { Page, IFirstLevelMenu } from '../../../models/IMenu'
 
 import { firstLevelMenu } from '../../../helpers/helpers'
 
@@ -53,21 +53,21 @@ export const Menu = (): JSX.Element => {
                 {firstLevelMenu.map(m => 
                     <div key={m.route}>
                         <Link href={`/${m.route}`}>
-                                <div className={cn(styles.firstLvl, {
-                                    [styles.firstLvlActive]: m.id == firstCategory
-                                })}>
-                                    {m.icon}
-                                    <span>{m.name}</span>
-                                </div>
+                            <div className={cn(styles.firstLvl, {
+                                [styles.firstLvlActive]: m.id == firstCategory
+                            })}>
+                                {m.icon}
+                                <span>{m.name}</span>
+                            </div>
                         </Link>
-                        {m.id == firstCategory && buildSecondLvl(m.route)}
+                        {m.id == firstCategory && buildSecondLvl(m)}
                     </div>
                 )}
             </>
         )
     }
     
-    const buildSecondLvl = (route: string) => {
+    const buildSecondLvl = (menuItem: IFirstLevelMenu) => {
         return (
             <div className={styles.secondBlock}>
                 {menu.map(m => {
@@ -86,7 +86,7 @@ export const Menu = (): JSX.Element => {
                                 initial={m.isOpened ? 'visible' : 'hidden'}
                                 animate={m.isOpened ? 'visible' : 'hidden'}
                             >
-                                {buildThirdLvl(m.pages, route)}
+                                {buildThirdLvl(m.pages, menuItem.route)}
                             </motion.div>
                         </div>
                     )
@@ -115,9 +115,7 @@ export const Menu = (): JSX.Element => {
 
     return (
         <div className={styles.menu}>
-            <ul>
-                {buildFirstLvl()}
-            </ul>
+            {buildFirstLvl()}
         </div>
     )
 }

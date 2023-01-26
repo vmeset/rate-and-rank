@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Htag, Rating, Tag, Card, withLayout, Input, Textarea } from '../components'
+import { Htag, withLayout } from '../components'
 import axios from 'axios'
 import { IMenuItem } from '../models/IMenu'
 import { GetStaticProps } from 'next'
@@ -11,29 +11,10 @@ function Home({menu, firstCategory}: HomeProps): JSX.Element {
 
   return (
     <>
-
-      <Input placeholder='Имя' />
-
-      <Textarea />
-      <Htag tag={'h1'}>text</Htag>
-      <Htag tag={'h2'}>text</Htag>
-      <Htag tag={'h3'}>text</Htag>
-
-      <Button apearance='primary' arrow='down'>puCh</Button>
-      <Button apearance='ghost' arrow='right'>puCh</Button>
-
-      <Card color='white'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab libero molestias aliquid ipsum laborum et dolore tempore hic? Fugiat recusandae nulla similique officia eveniet animi at. Praesentium laudantium iure alias!
-      </Card>
-
-      <Tag>tagTeam</Tag>
-      <Tag href='ya.ru'>tagTeam</Tag>
-      <Tag color='primary'>tagTeam</Tag>
-      <Tag color='red'>tagTeam</Tag>
-      <Tag sizer='s'>tagTeam</Tag>
-      <Tag sizer='m'>tagTeam</Tag>
-
-      <Rating rating={rating} isEditable setRating={setRating} />
+      <Htag tag={'h1'}>Home page</Htag>
+      Приложение на NextJS13, React, TypeScript
+      CSS на модулях, верстка на grid
+      Анимации релизовал на Framer-Motion
     </>
   )
 }
