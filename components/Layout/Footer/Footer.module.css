@@ -1,17 +1,10 @@
 .footer {
     display: grid;
     padding: 25px 32px;
-    gap: 40px;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr;
     background: var(--primary);
     color: var(--white);
     font-size: 16px;
     line-height: 22px;
-}
-
-@media (max-width: 765px) {
-    .footer {
-        grid-template-columns: 1fr;
-        justify-items: center;
-    }
+    justify-items: center;
 }

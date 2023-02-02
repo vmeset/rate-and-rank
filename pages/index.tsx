@@ -1,20 +1,35 @@
-import { useState } from 'react'
-import { Htag, withLayout } from '../components'
+import { Divider, Htag, withLayout } from '../components'
 import axios from 'axios'
 import { IMenuItem } from '../models/IMenu'
 import { GetStaticProps } from 'next'
 import { API } from '../helpers/api'
+import { Typography } from '../components/Typography/Typography'
+import Link from 'next/link'
 
 function Home({menu, firstCategory}: HomeProps): JSX.Element {
 
-  const [rating, setRating] = useState<number>(4)
-
   return (
     <>
-      <Htag tag={'h1'}>Home page</Htag>
-      Приложение на NextJS13, React, TypeScript
-      CSS на модулях, верстка на grid
-      Анимации релизовал на Framer-Motion
+      <Htag tag={'h1'}>Привет гость!</Htag>
+      <Divider />
+      <Typography>
+        Я написал это приложение на 
+        <Link target={'_blank'} href={'https://www.npmjs.com/package/react'}> React </Link>
+        фреймворке 
+        <Link target={'_blank'} href={'https://nextjs.org/'}> NextJS </Link>
+        с использованием 
+        <Link target={'_blank'} href={'https://www.npmjs.com/package/typescript'}> TypeScript</Link>
+      </Typography>
+      <Divider />
+      <Typography>
+        CSS на модулях, верстка на grid
+      </Typography>
+      <Divider />
+      <Typography>
+        Анимации релизовал на 
+        <Link target={'_blank'} href={'https://www.npmjs.com/package/framer-motion'}> Framer-Motion</Link>
+      </Typography>
+      <Divider />
     </>
   )
 }

@@ -17,3 +17,7 @@
     line-height: 29px;
     letter-spacing: 0em;
 }
+
+.typography a {
+    color: var(--primary);
+}

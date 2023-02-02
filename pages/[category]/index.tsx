@@ -2,7 +2,8 @@ import axios from "axios"
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next"
 import { ParsedUrlQuery } from "querystring"
 import { useContext, useEffect } from "react"
-import { Button, Divider, withLayout } from "../../components"
+import { Button, Divider, Htag, withLayout } from "../../components"
+import { Typography } from "../../components/Typography/Typography"
 import { AppContext } from "../../context/app.context"
 import { API } from "../../helpers/api"
 import { firstLevelMenu } from "../../helpers/helpers"
@@ -16,12 +17,12 @@ const Category = ({firstCategory, menu}: CategoryProps): JSX.Element => {
       setMenu(menu)
     }, [menu])
     
-
     return (
         <div>
             <Divider />
-            cat:=:{firstCategory}
+            <Typography>Теперь выберите подкатегорию</Typography>
             <Divider />
+            <Typography>Категория "Курсы" доступна полностью, другие категории в процессе наполнения и могут отображаться некорректно</Typography>
         </div>
     )
 }

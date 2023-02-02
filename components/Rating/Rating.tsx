@@ -4,6 +4,7 @@ import StarIcon from './star.svg'
 import cn from 'classnames'
 import styles from './Rating.module.css'
 
+// eslint-disable-next-line react/display-name
 export const Rating = forwardRef(({rating, error, setRating, isEditable = false, ...props}: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>))
 

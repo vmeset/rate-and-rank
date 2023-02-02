@@ -3,7 +3,7 @@ import SortIcon from './Sort.svg'
 import cn from "classnames"
 import styles from './Sort.module.css'
 
-export const Sort = ({sort, setSort, className, ...props}: SortProps): JSX.Element => {
+export const Sort = ({sort, setSort, ...props}: SortProps): JSX.Element => {
     return (
         <div className={styles.sort} {...props}>
             <span onClick={() => setSort(ESort.Rating)}
