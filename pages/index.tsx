@@ -10,7 +10,7 @@ function Home({menu, firstCategory}: HomeProps): JSX.Element {
 
   return (
     <>
-      <Htag tag={'h1'}>Привет гость!</Htag>
+      <Htag tag={'h1'}>Привет, гость!</Htag>
       <Divider />
       <Typography>
         Я написал это приложение на 
