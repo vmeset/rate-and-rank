@@ -11,11 +11,11 @@ import { IMenuItem } from "../../models/IMenu"
 
 const Category = ({firstCategory, menu}: CategoryProps): JSX.Element => {
 
-    const {setMenu} = useContext(AppContext)
+    // const {setMenu} = useContext(AppContext)
 
-    useEffect(() => {
-        setMenu?.(menu)
-    }, [menu])
+    // useEffect(() => {
+    //     setMenu?.(menu)
+    // }, [menu])
 
     return (
         <div>
