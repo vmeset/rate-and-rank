@@ -29,8 +29,7 @@ export const TopPageComponent = ({firstCategory, products, page}: TopPageCompone
     
     return (
         <>
-            topPage Ct
-            {/* <div className={styles.title}>
+            <div className={styles.title}>
                 <Htag tag="h1">{page.title}</Htag>
                 {products && <Tag color="grey" sizer="m">{products.length}</Tag>}
                 <Sort sort={sort} setSort={setSort} />
@@ -53,7 +52,7 @@ export const TopPageComponent = ({firstCategory, products, page}: TopPageCompone
             <Htag tag="h2">Получаемые навыки</Htag>
             {page.tags && page.tags.map(t => (
                 <Tag key={t} color='primary'>{t}</Tag>
-            ))} */}
+            ))}
         </>
     )
 }
