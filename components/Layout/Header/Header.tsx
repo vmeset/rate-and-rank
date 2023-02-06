@@ -34,7 +34,7 @@ export const Header = ({className, ...props} : HeaderProps): JSX.Element => {
 
     return (
         <header {...props} className={cn(className, styles.header)}>
-            <Logo />
+            <Logo onClick={() => router.push('/')} />
             <ButtonIcon apearance='white' icon='burger' onClick={() => setIsOpen(true)}/>
             <motion.div className={styles.mobileMenu} 
                 variants={variants} initial='closed' animate={isOpen ? 'opened' : 'closed'}

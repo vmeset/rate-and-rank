@@ -12,3 +12,7 @@
     font-weight: 500;
     line-height: 25px;
 }
+
+.logo svg {
+    cursor: pointer;
+}

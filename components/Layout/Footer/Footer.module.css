@@ -8,3 +8,9 @@
     line-height: 22px;
     justify-items: center;
 }
+
+@media (max-width: 765px) {
+    .footer {
+        padding: 5px 32px;
+    }
+}

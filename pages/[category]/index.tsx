@@ -12,7 +12,7 @@ const Category = ({firstCategory, menu}: CategoryProps): JSX.Element => {
     return (
         <div>
             <Divider />
-            <Typography>Теперь выберите подкатегорию</Typography>
+            <Typography>Выберите в меню подкатегорию</Typography>
             <Divider />
             <Typography>Категория "Курсы" доступна полностью, другие категории в процессе наполнения и могут отображаться некорректно</Typography>
         </div>

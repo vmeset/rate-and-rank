@@ -29,7 +29,7 @@
 @media (max-width: 765px) {
     .wrapper {
         grid-template-columns: minmax(320px, 1fr);
-        grid-template-rows: 1fr;
+        grid-template-rows: auto 1fr auto;
         grid-template-areas: 
         "header"
         "body"
