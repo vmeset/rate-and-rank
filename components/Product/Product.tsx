@@ -44,18 +44,18 @@ export const Product = motion(forwardRef(({product, className, ...props}: Produc
                 </div>
                 <div className={styles.title}>{product.title}</div>
                 <div className={styles.price}>
-                    {/* {priceRu(product.price)} */}
-                    {product.price}
+                    {priceRu(product.price)}
+                    {/* {product.price} */}
                     {product.oldPrice &&
                         <Tag color='green' sizer="s" className={styles.oldPrice}>
-                            {/* {priceRu(product.price - product.oldPrice)} */}
-                            {(product.price - product.oldPrice)}
+                            {priceRu(product.price - product.oldPrice)}
+                            {/* {(product.price - product.oldPrice)} */}
                         </Tag>
                     }
                 </div>
                 <div className={styles.credit}>
-                    {/* {priceRu(product.credit)}/<span className={styles.month}>мес</span> */}
-                    {product.credit}/<span className={styles.month}>мес</span>
+                    {priceRu(product.credit)}/<span className={styles.month}>мес</span>
+                    {/* {product.credit}/<span className={styles.month}>мес</span> */}
                 </div>
                 <div className={styles.rating}>
                     <Rating rating={product.reviewAvg ?? product.initialRating} />

@@ -16,8 +16,8 @@ export const HH: FC<HHProps> = ({count, juniorSalary, middleSalary, seniorSalary
             <Card className={styles.salary}>
                 <div>
                     <div className={styles.title}>JUNIOR</div>
-                    {/* <div className={styles.salaryValue}>{priceRu(juniorSalary)}</div> */}
-                    <div className={styles.salaryValue}>{juniorSalary}</div>
+                    <div className={styles.salaryValue}>{priceRu(juniorSalary)}</div>
+                    {/* <div className={styles.salaryValue}>{juniorSalary}</div> */}
                     <div className={styles.rate}>
                         <RateIcon className={styles.filled}/>
                         <RateIcon />
@@ -26,8 +26,8 @@ export const HH: FC<HHProps> = ({count, juniorSalary, middleSalary, seniorSalary
                 </div>
                 <div>
                     <div className={styles.title}>MIDDLE</div>
-                    {/* <div className={styles.salaryValue}>{priceRu(middleSalary)}</div> */}
-                    <div className={styles.salaryValue}>{middleSalary}</div>
+                    <div className={styles.salaryValue}>{priceRu(middleSalary)}</div>
+                    {/* <div className={styles.salaryValue}>{middleSalary}</div> */}
                     <div className={styles.rate}>
                         <RateIcon className={styles.filled}/>
                         <RateIcon className={styles.filled}/>
@@ -36,8 +36,8 @@ export const HH: FC<HHProps> = ({count, juniorSalary, middleSalary, seniorSalary
                 </div>
                 <div>
                     <div className={styles.title}>SENIOR</div>
-                    {/* <div className={styles.salaryValue}>{priceRu(seniorSalary)}</div> */}
-                    <div className={styles.salaryValue}>{seniorSalary}</div>
+                    <div className={styles.salaryValue}>{priceRu(seniorSalary)}</div>
+                    {/* <div className={styles.salaryValue}>{seniorSalary}</div> */}
                     <div className={styles.rate}>
                         <RateIcon className={styles.filled}/>
                         <RateIcon className={styles.filled}/>
