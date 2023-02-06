@@ -1,13 +1,21 @@
 import axios from "axios"
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next"
 import { ParsedUrlQuery } from "querystring"
+import { useContext, useEffect } from "react"
 import { Divider, withLayout } from "../../components"
 import { Typography } from "../../components/Typography/Typography"
+import { AppContext } from "../../context/app.context"
 import { API } from "../../helpers/api"
 import { firstLevelMenu } from "../../helpers/helpers"
 import { IMenuItem } from "../../models/IMenu"
 
 const Category = ({firstCategory, menu}: CategoryProps): JSX.Element => {
+
+    const {setMenu} = useContext(AppContext)
+
+    useEffect(() => {
+        setMenu?.(menu)
+    }, [menu])
 
     return (
         <div>
@@ -42,6 +50,7 @@ export const getStaticProps: GetStaticProps<CategoryProps> = async ({params}: Ge
     }
     const {data: menu} = await axios.post<IMenuItem[]>(API.topPage.find, 
         {firstCategory: firstCategoryItem.id})
+    
     return {
       props: {
         menu,

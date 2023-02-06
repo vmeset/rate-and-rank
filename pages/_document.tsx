@@ -9,7 +9,7 @@ class MyDocument extends Document {
         return (
             <Html lang='ru'>
                 <Head>
-                <link rel="stylesheet" href="/favicon.ico" />
+                    <link rel="stylesheet" href="/favicon.ico" />
                 </Head>
                 <body>
                     <Main />
